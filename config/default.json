@@ -1,3 +1,4 @@
 {
-    "port": 4001
+    "port": 4001,
+    "baht_per_hour": 30
 }

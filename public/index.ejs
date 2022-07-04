@@ -1,1 +1,94 @@
-<H1>Hello world.</H1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ThaiVivat - Parking API</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link href="./css/style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h3>ยินดีต้อนรับเข้าสู่ ThaiVivat Parking API v1.0</h3>
+                <div class="card text-bg-light mb-3 mt-3">
+                    <div class="card-header">มี Features อะไรบ้าง</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>สามารถดู <a href="/dashboard" target="_blank">Dashboard</a> แบบ Realtime</li>
+                            <li>สามารถเพิ่ม Slot ได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถจอง/ยกเลิกการจอง Slot ได้</li>
+                            <li>สามารถนำรถเข้าจอดได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถนำรถออกได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถ เปิด/ปิด การใช้งานแต่ละ Slot ได้</li>
+                            <li>สามารถดู Slot ทั้งหมดได้</li>
+                            <li>สามารถดู Slot ตาม Slot code ได้</li>
+                            <li>สามารถดู Slot ถนัดไปที่ใกล้ที่สุดได้</li>
+                            <li>สามารถดู Status ของรายการ Slot ทั้งหมดได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถดู Plate Number ทั้งหมด ตาม size ของรถได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถดู Slot ทั้งหมด ตาม size ของรถได้ <i class="bi bi-check-circle-fill text-success"></i></li>
+                            <li>สามารถดูข้อมูลของรถที่จอดอยู่ทั้งหมดได้ เช่น Slot, Plate number, size, เวลาเข้าจอด</li>
+                            <li>สามารถดูประวัติการจอดทั้งหมดได้ เช่น Slot, Plate number, size, เวลาเข้าจอด, เวลาออก, ค่าบริการ</li>
+                            <li>คิดค่าที่จอดเป็นชั่วโมง เศษของชั่วโมงคิดเป็น 1 ชั่วโมง</li>
+                            <li>สามารถตั้งแค่ที่จอดใน Configuration file ได้ default = 30 บาท/ชั่วโมง</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">แนวคิด Programming</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>ในแต่ละ Slot จะมีลำดับเลขตามความใกล้</li>
+                            <li>สถานะทั้งหมดของ Slot มี 4 สถานะ คือ<br/>
+                                1. Inactivated (ไม่ใช้งาน)<br/>
+                                2. Available (ว่าง, พร้อมใช้งาน)<br/>
+                                3. Not available (ไม่ว่าง)<br/>
+                                4. Reserved (จอง)
+                            </li>
+                            <li>เมื่อสร้าง Slot ใหม่ ระบบจะจัดเรียงลำดับให้อัตโนมัติ สถานะ Default คือ Available</li>
+                            <li>เมื่อ Check In (เข้าจอด) ระบบจะเปลี่ยนสถานะของ Slot เป็น Not available</li>
+                            <li>เมื่อ Check Out (นำรถออก) ระบบจะคำนวณและแสดงค่าบริการ ระบบจะเปลี่ยนสถานะของ Slot เป็น Available</li>
+                            <li>ใช้ trigger ในการอัพเดท Status เมื่อเข้ารถเข้าจอด-ออก</li>
+                            <li>ข้อยกเว้น: สมมุติว่าทะเบียนรถที่เข้ามาจอดไม่ซ้ำกันกับรถที่จอดอยู่</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">Stack ที่ใช้</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>NodeJs</li>
+                            <li>Express Framework</li>
+                            <li>Socket.io</li>
+                            <li>EJS Template Engine</li>
+                            <li>Bootstrap CSS Framework</li>
+                            <li>PM2 Process manager</li>
+                            <li>MySQL</li>
+                            <li>PhpMyadmin</li>
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>Cloud By Digital Ocean</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card text-bg-light mb-3">
+                    <div class="card-header">ข้อมูลผู้สมัคร</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>นายสุรเชษฐ อุ่นหล้า</li>
+                            <li>081-6362270</li>
+                            <li>Joystats@yahoo.com</li>
+                            <li><a href="http://joystats.github.io/" target="_blank">Github Page</a></li>
+                            <li><a href="https://github.com/joystats" target="_blank">Github</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center">ขอบคุณครับ :)</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
