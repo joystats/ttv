@@ -4,6 +4,16 @@
 <ul>
     <li>1. pull docker-compose file จาก https://github.com/joystats/ttv-compose</li>
     <li>2. พิมพ์คำสั่ง docker-compose up -d</li>
+    <li>3. initial mockup database
+        <ul>
+            <li>1. docker exec -it mysql_container bash</li>
+            <li>2. mysql -u root -p</li>
+            <li>3. กรอกรหัสผ่าน 1234</li>
+            <li>4. เข้าสู่ mysql prompt mode พิมพ์ source thaivivat.sql</li>
+        </ul>
+    </li>
+    <li>4. หน้า Welcome API http://localhost/</li>
+    <li>5. หน้า Dashboard http://localhost/dashboard</li>
     <li>docker image ที่เกี่ยวข้อง joystats/api, joystats/parking_database, phpmyadmin/phpmyadmin</li>
 </ul>
 
